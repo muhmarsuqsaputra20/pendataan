@@ -1,4 +1,5 @@
 <?php
+require "cek_login.php";
 require "koneksi.php";
 
 $cari = trim($_GET["cari"] ?? "");
@@ -14,20 +15,23 @@ $data = mysqli_stmt_get_result($perintah);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Data Anggota</title>
-  <form method="get">
-  <p><input type="text" name="cari" placeholder="Cari nama atau alamat"
-            value="<?= htmlspecialchars($cari) ?>"></p>
-  <button type="submit">Cari</button>
-  <a href="index.php">Reset</a>
-</form>
-<br>
 </head>
 <body>
   <h1>Data Anggota</h1>
+  <p><a href="logout.php">Keluar</a></p>
   <p><a href="tambah.php">+ Tambah Anggota</a></p>
-  <table border="1" cellpadding="8">
+
+  <form method="get">
+    <p><input type="text" name="cari" placeholder="Cari nama atau alamat"
+              value="<?= htmlspecialchars($cari) ?>"></p>
+    <button type="submit">Cari</button>
+    <a href="index.php">Reset</a>
+  </form>
+  <br>
+
+  <table>
     <tr><th>No</th><th>Nama</th><th>Alamat</th><th>Aksi</th></tr>
     <?php $no = 1; while ($baris = mysqli_fetch_assoc($data)) : ?>
     <tr>

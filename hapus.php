@@ -1,4 +1,8 @@
 <?php
+<?php
+require "cek_login.php";
+require "koneksi.php";
+require "cek_login.php";
 require "koneksi.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
