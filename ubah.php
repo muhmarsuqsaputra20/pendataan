@@ -1,4 +1,5 @@
 <?php
+require "cek_login.php";
 require "koneksi.php";
 $id = (int) ($_GET["id"] ?? 0);
 
@@ -31,12 +32,13 @@ if (!$anggota) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Ubah Anggota</title>
 </head>
 <body>
   <h1>Ubah Anggota</h1>
   <form method="post">
+    <input type="hidden" name="csrf" value="<?= $_SESSION["csrf"] ?>">
     <p><input type="text" name="nama" value="<?= htmlspecialchars($anggota["nama"]) ?>" required></p>
     <p><input type="text" name="alamat" value="<?= htmlspecialchars($anggota["alamat"]) ?>" required></p>
     <button type="submit">Simpan Perubahan</button>

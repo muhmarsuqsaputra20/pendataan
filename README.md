@@ -25,7 +25,7 @@ PHP, MySQL (MariaDB), HTML, CSS, XAMPP
 6. Buka `http://localhost/pendataan/` dan login.
 
 ## Catatan
-Proyek ini untuk latihan di komputer lokal dan belum memiliki perlindungan CSRF.
+Proyek ini untuk latihan. Formulir data sudah dilengkapi token CSRF.
 
 ## Pembuat
 Muh. Marsuq Saputra

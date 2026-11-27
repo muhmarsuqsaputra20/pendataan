@@ -42,6 +42,7 @@ $data = mysqli_stmt_get_result($perintah);
         <a href="ubah.php?id=<?= $baris["id"] ?>">Ubah</a>
         <form method="post" action="hapus.php" style="display:inline"
               onsubmit="return confirm('Hapus data ini?')">
+          <input type="hidden" name="csrf" value="<?= $_SESSION["csrf"] ?>">
           <input type="hidden" name="id" value="<?= $baris["id"] ?>">
           <button type="submit">Hapus</button>
         </form>
