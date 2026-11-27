@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Saya</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <header class="bagian hero">
+    <div class="foto">
+      <span>MS</span>
+      <img src="foto.jpg" alt="Foto Muh. Marsuq Saputra" onerror="this.remove()">
+    </div>
+    <div>
+      <h1>Portofolio <small>2026</small></h1>
+      <p class="nama">Muh. Marsuq Saputra</p>
+      <p>Calon Web Developer</p>
+    </div>
+  </header>
+
+  <section class="bagian" id="tentang">
+    <h2>Tentang Saya</h2>
+    <p>Saya lulusan Teknik Informatika yang sedang belajar web development.</p>
+
+    <h3>Keahlian</h3>
+    <ul class="keahlian">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>PHP</li>
+      <li>MySQL</li>
+      <li>Microsoft Office</li>
+    </ul>
+
+    <div class="grid">
+      <div>
+        <h3>Pendidikan</h3>
+        <p>S.Kom. Teknik Informatika<br>UIN Alauddin Makassar (2019–2026)</p>
+      </div>
+      <div>
+        <h3>Pengalaman</h3>
+        <p>Pengelola administrasi &amp; pendataan<br>Crew store / barista</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bagian" id="proyek">
+    <h2>Proyek Saya</h2>
+    <div class="grid">
+
+      <article class="sibi">
+        <img id="sibi-utama" src="sibi-home.jpg" alt="Halaman utama website SIBI">
+        <div class="mini">
+          <img src="sibi-home.jpg" alt="Halaman utama website SIBI" class="aktif">
+          <img src="sibi-mulai.jpg" alt="Mode suara ke gambar">
+          <img src="sibi-cara-pakai.jpg" alt="Halaman cara pakai">
+          <img src="sibi-tentang.jpg" alt="Halaman tentang sistem">
+        </div>
+        <h3>Penerjemah Bahasa Isyarat SIBI</h3>
+        <p>Website penerjemah bahasa isyarat SIBI berbasis deep learning (ResNet-50). Mengubah gestur dari kamera menjadi suara, dan suara menjadi gambar isyarat. Proyek skripsi.</p>
+      </article>
+
+      <article>
+        <h3>Website Penjualan Telur</h3>
+        <p>Dibuat dengan HTML, CSS, PHP, dan MySQL.</p>
+      </article>
+
+      <article>
+        <h3>Kalkulator Sederhana</h3>
+        <p>Latihan JavaScript.</p>
+        <a class="tombol" href="kalkulator.html">Coba kalkulator</a>
+      </article>
+
+      <article>
+        <h3>To-do List</h3>
+        <p>Latihan array, perulangan, dan localStorage.</p>
+        <a class="tombol" href="todo.html">Coba To-do List</a>
+      </article>
+      <article>
+  <h3>Cek Cuaca</h3>
+  <p>Latihan fetch dan API.</p>
+  <a class="tombol" href="cuaca.html">Coba Cek Cuaca</a>
+</article>
+<article>
+  <h3>Aplikasi Pendataan</h3>
+  <p>Tambah, ubah, hapus, dan cari data dengan PHP dan MySQL.</p>
+  <a class="tombol" href="https://github.com/muhmarsuqsaputra20/pendataan">Lihat kode</a>
+</article>
+
+    </div>
+  </section>
+
+  <footer class="bagian" id="kontak">
+    <h2>Terima Kasih</h2>
+    <p>Mari terhubung.</p>
+    <a class="tombol" href="mailto:muhmarsuqsaputra20@gmail.com">Kirim email</a>
+    <a class="tombol" href="https://github.com/muhmarsuqsaputra20">GitHub</a>
+  </footer>
+
+  <script>
+    const utama = document.getElementById("sibi-utama");
+    const mini = document.querySelectorAll(".mini img");
+
+    mini.forEach(function (gambar) {
+      gambar.addEventListener("click", function () {
+        utama.src = gambar.src;
+        utama.alt = gambar.alt;
+        mini.forEach(function (g) { g.classList.remove("aktif"); });
+        gambar.classList.add("aktif");
+      });
+    });
+  </script>
+</body>
+</html>

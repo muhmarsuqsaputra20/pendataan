@@ -1,55 +1,122 @@
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 16px;
+  line-height: 1.6;
   background: #05070d;
   color: #e8edf5;
 }
 
-h1 { color: #8fd0ff; }
-a { color: #8fd0ff; }
+h1, h2, h3 {
+  font-family: Oswald, Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+h1 { font-size: clamp(40px, 9vw, 72px); margin: 0; }
+h1 small { font-size: 0.4em; color: #8fb8d8; }
+h2 { font-size: 36px; margin-top: 0; }
+h3 { color: #8fd0ff; }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+nav { display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; }
+nav a { color: #e8edf5; text-decoration: none; padding: 4px 16px; border-radius: 20px; }
+nav a:hover { background: white; color: #05070d; }
+
+.bagian {
+  background: radial-gradient(circle at 15% 50%, #12507a, #0a1a30 45%, #060a14 80%);
+  border-radius: 12px;
+  padding: 40px 28px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  min-height: 360px;
+}
+.hero p { margin: 4px 0; }
+.nama { font-size: 22px; font-weight: bold; }
+
+.foto {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #a3122a;
+  display: grid;
+  place-items: center;
+  font: 700 64px Oswald, Arial, sans-serif;
+}
+.foto img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+
+.keahlian { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+.keahlian li { background: #0d2c4d; border: 1px solid #2b6a9e; border-radius: 8px; padding: 6px 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+article, .kartu {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+}
+article:hover { border-color: #8fd0ff; }
+article h3 { margin-top: 0; }
+
+footer { text-align: center; }
+
+.tombol, button {
+  display: inline-block;
+  margin: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  background: white;
+  color: #0a1a30;
   border: none;
-  background: #0a1a30;
+  border-radius: 20px;
+  cursor: pointer;
 }
+.tombol:hover, button:hover { background: #8fd0ff; }
 
-th, td {
-  border: 1px solid #234a70;
-  padding: 10px;
-  text-align: left;
-}
-
-th { background: #12507a; }
-tr:hover td { background: #0d2c4d; }
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
+.kartu { display: flex; flex-wrap: wrap; gap: 8px; }
+input {
+  flex: 1 1 200px;
+  padding: 10px 12px;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #2b6a9e;
-  background: #0a1a30;
+  background: #060a14;
   color: white;
 }
+.baris-tombol { display: flex; flex-wrap: wrap; width: 100%; }
+.baris-tombol button { flex: 1 1 100px; }
 
-button {
-  padding: 8px 18px;
-  margin-left: 8px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  background: white;
-  color: #0a1a30;
-  cursor: pointer;
+#daftar { padding: 0; list-style: none; }
+#daftar li { background: #0d2c4d; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+select {
+  flex: 1 1 150px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #2b6a9e;
+  background: #060a14;
+  color: white;
 }
-
-button:hover { background: #8fd0ff; }
-form > button[type="submit"]:only-of-type { margin-left: 0; }
-td button { background: #a3122a; color: white; }
-td button:hover { background: #d01c3a; }
+#daftar li { display: flex; align-items: center; gap: 10px; }
+#daftar li span { flex: 1; }
+#daftar li.selesai span { text-decoration: line-through; opacity: 0.5; }
+#daftar input[type="checkbox"] { flex: none; width: 20px; height: 20px; padding: 0; }
+.sibi { grid-column: 1 / -1; }
+#sibi-utama { max-height: 420px; object-fit: contain; background: #060a14; }
+.mini { display: flex; gap: 8px; margin-bottom: 12px; }
+.mini img { width: 25%; margin: 0; cursor: pointer; opacity: 0.6; border: 2px solid transparent; }
+.mini img:hover, .mini img.aktif { opacity: 1; border-color: #8fd0ff; }
